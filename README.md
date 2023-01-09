@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# 🐳 Using docker in a React project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was developed to put into practice the knowledge of docker acquired in my PDI. Using docker we can easily simulate infrastructure and build complex environments with little effort. Streamlining service maintenance and development.
 
-## Available Scripts
+**Managing images:**
 
-In the project directory, you can run:
+Images is what contains the minimum resources you need to have in your project, these images are downloaded from the link: [https://hub.docker.com/search?q=](https://hub.docker.com/ search?q=)
 
-### `npm start`
+Having an image on your machine doesn't mean it's configured inside a container.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+You can use the following commands to your advantage:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+docker image ls → list the images you have on your machine
 
-### `npm test`
+docker image rm image_id → Command used to delete images from your machine
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+docker image rmi image_id → Command also used to delete images from your machine
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Managing containers:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**docker ps** → list the containers that are running
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**docker ps -a** → lists all containers on our machine, regardless of whether they are connected or not
 
-### `npm run eject`
+**docker ps -h** → is the help for the ps command, tells you commands you can use that are tied to ps
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**docker stop id_of_container** → It stops the container that is running
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**docker rm id_of_container** → Remove the container
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Creating containers:**
 
-## Learn More
+You can google for “docker postgres with volume” to find container creation commands, like this one from postgres:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`docker run -d -p 5432:5432 -v "volume_name:/var/lib/postgresql/data" -e POSTGRES_PASSWORD=postgres -e PRIMARY_USER=postgres postgres`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**docker volume create name_of_volume** —> Create a volume on your machine to store database data
 
-### Code Splitting
+docker run → the container is running
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-d → is running the container in a hidden way
 
-### Analyzing the Bundle Size
+-p → set the port
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+-v → contains the volume name and path where the data will be stored
 
-### Making a Progressive Web App
+-e → are variables added to the command, such as password and primary user
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**building the project:**
 
-### Deployment
+docker build - -tag poker .
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+**Running the project where name is the name of the container and pocker is the name of the image:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+docker run -p 3000:3000 - -name mikosa poker
+
+
+Once this is done, your project will be started with docker on port 3000
+
