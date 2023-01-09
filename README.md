@@ -55,17 +55,19 @@ docker run → the container is running
 
 ⚙️ **building the project:**
 
-docker build - -tag poker .
+docker build --tag poker .
 
 
 🔌 **Running the project where name is the name of the container and pocker is the name of the image:**
 
-docker run -p 3000:3000 - -name mikosa poker
+docker run -p 3000:3000 --name mikosa poker
 
 <br><br>
 
 ✅ Once this is done, your project will be started with docker on port 3000
 
 
-![Learnned Docker](https://user-images.githubusercontent.com/60449239/211226429-d418fdc1-c1c6-474d-bdbc-0f7fd999347a.gif)
+![Learnned Docker (1)](https://user-images.githubusercontent.com/60449239/211226553-445bdd46-a75b-4378-847e-49fb42ef856a.gif)
+
+
 
