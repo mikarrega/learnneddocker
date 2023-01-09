@@ -67,4 +67,5 @@ docker run -p 3000:3000 - -name mikosa poker
 ✅ Once this is done, your project will be started with docker on port 3000
 
 
+![Learnned Docker](https://user-images.githubusercontent.com/60449239/211226429-d418fdc1-c1c6-474d-bdbc-0f7fd999347a.gif)
 
