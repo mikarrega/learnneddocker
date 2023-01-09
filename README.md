@@ -2,7 +2,7 @@
 
 This project was developed to put into practice the knowledge of docker acquired in my PDI. Using docker we can easily simulate infrastructure and build complex environments with little effort. Streamlining service maintenance and development.
 
-**Managing images:**
+💽 **Managing images:**
 
 Images is what contains the minimum resources you need to have in your project, these images are downloaded from the link: [https://hub.docker.com/search?q=](https://hub.docker.com/ search?q=)
 
@@ -17,7 +17,7 @@ docker image rm image_id → Command used to delete images from your machine
 docker image rmi image_id → Command also used to delete images from your machine
 
 
-**Managing containers:**
+📦**Managing containers:**
 
 **docker ps** → list the containers that are running
 
@@ -30,7 +30,7 @@ docker image rmi image_id → Command also used to delete images from your machi
 **docker rm id_of_container** → Remove the container
 
 
-**Creating containers:**
+👩‍💻 **Creating containers:**
 
 You can google for “docker postgres with volume” to find container creation commands, like this one from postgres:
 
@@ -50,15 +50,17 @@ docker run → the container is running
 
 
 
-**building the project:**
+⚙️ **building the project:**
 
 docker build - -tag poker .
 
 
-**Running the project where name is the name of the container and pocker is the name of the image:**
+🔌 **Running the project where name is the name of the container and pocker is the name of the image:**
 
 docker run -p 3000:3000 - -name mikosa poker
 
 
-Once this is done, your project will be started with docker on port 3000
+✅ Once this is done, your project will be started with docker on port 3000
+
+
 
