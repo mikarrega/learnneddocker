@@ -1,6 +1,7 @@
 # 🐳 Using docker in a React project
 
 This project was developed to put into practice the knowledge of docker acquired in my PDI. Using docker we can easily simulate infrastructure and build complex environments with little effort. Streamlining service maintenance and development.
+<br><br>
 
 💽 **Managing images:**
 
