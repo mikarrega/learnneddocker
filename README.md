@@ -17,6 +17,7 @@ docker image rm image_id → Command used to delete images from your machine
 
 docker image rmi image_id → Command also used to delete images from your machine
 
+<br><br>
 
 📦**Managing containers:**
 
@@ -30,6 +31,7 @@ docker image rmi image_id → Command also used to delete images from your machi
 
 **docker rm id_of_container** → Remove the container
 
+<br><br>
 
 👩‍💻 **Creating containers:**
 
@@ -49,7 +51,7 @@ docker run → the container is running
 
 -e → are variables added to the command, such as password and primary user
 
-
+<br><br>
 
 ⚙️ **building the project:**
 
@@ -60,6 +62,7 @@ docker build - -tag poker .
 
 docker run -p 3000:3000 - -name mikosa poker
 
+<br><br>
 
 ✅ Once this is done, your project will be started with docker on port 3000
 
